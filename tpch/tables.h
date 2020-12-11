@@ -183,7 +183,7 @@ maps make_maps(string dirname, bool verbose) {
     if (verbose) nextTime("custkey -> orderkey -> <order,lineitem> index");
 
     string cf = dirname;
-    string customers_fname = cf.append("customers.tbl");
+    string customers_fname = cf.append("customer.tbl");
     sequence<Customer> customers
       = read_and_parse<Customer>(customers_fname, verbose);
     CUSTOMER_NUM = customers.size();
