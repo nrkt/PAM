@@ -393,7 +393,7 @@ void post_process(double** tm, int round) {
 
 void test_all(bool verbose, bool if_query, bool if_update,
 	      int scale, int num_txns, string data_directory) {
-   
+
   history.push_back(make_maps(data_directory, verbose));
   memory_stats();
   if (verbose) nextTime("gc for make maps");
@@ -479,7 +479,7 @@ int main(int argc, char** argv) {
   if (scale == 1) default_directory = "/ssd1/tpch/S1/";
    
   string data_directory = P.getOptionValue("-d", default_directory);
-
+  cout << "Num Workers = " << num_workers() << endl;
   test_all(verbose, if_query, if_update,
 	   scale, num_txns, data_directory);
   
