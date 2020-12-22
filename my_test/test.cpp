@@ -17,7 +17,7 @@ size_t new_lineitem = 0;
 size_t shipped_lineitem = 0;
 size_t keep_versions = 1000000;
 bool if_persistent = false;
-bool if_collect = false;
+bool if_collect = true;
 
 void test_all(bool verbose, bool if_query, bool if_update,
 	      int scale, int num_txns, string data_directory) {
