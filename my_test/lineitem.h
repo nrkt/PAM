@@ -147,8 +147,8 @@ struct lineitem_flags {
 };
 
 using dkey_t = uint;
-using linenumber_t = uchar;
-using quantity_t = uchar;
+using linenumber_t = uint;
+using quantity_t = uint;
 using price_t = float;
 
 // size 40

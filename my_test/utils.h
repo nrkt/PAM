@@ -1,23 +1,27 @@
 const double epsilon = 0.00001;
 template <class Val>
 struct keyed_entry {
-  using key_t = dkey_t;
-  using val_t = Val;
+  using key_t = dkey_t; //dkey_t: uint
+  using val_t = Val; //Val: uchar
   static bool comp(const key_t& a, const key_t& b) {return a < b;}
 };
 
+//pam_map: create weight_balanced_tree with keyed_entry in map.h
+//keyed_entry: entry data having key and value
 template <class Val>
 using keyed_map = pam_map<keyed_entry<Val>>;
 
-using key_pair = pair<dkey_t,dkey_t>;
+using key_pair = pair<dkey_t,dkey_t>; //dkey_t: uint
 
 template <class Val>
 struct paired_key_entry {
-  using key_t = key_pair;
+  using key_t = key_pair; //paired_key
   using val_t = Val;
   static bool comp(const key_t& a, const key_t& b) {return a < b;}
 };
 
+//pam_map: create weight_balanced_tree with paired_key_entry in map.h
+//paired_key_entry: entry data having paired_key and value
 template <class Val>
 using paired_key_map = pam_map<paired_key_entry<Val>>;
 
